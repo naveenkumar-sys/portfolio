@@ -1,0 +1,9 @@
+@import "tailwindcss";
+body {
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.font-heading {
+  font-family: "Cherry Cream Soda", cursive;
+}
+
