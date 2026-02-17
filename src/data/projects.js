@@ -39,7 +39,7 @@ const projects = [
   },
   {
     title: "physiotherapy website",
-    image: zion,
+    image: sd,
     link: "https://physiocare-p5wf.vercel.app/",
     points: ["React", "Tailwind", "Framer Motion"],
   },
