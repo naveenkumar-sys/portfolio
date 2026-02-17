@@ -2,7 +2,7 @@ import projects from "../../data/projects";
 
 const FeaturedWork = () => {
   return (
-    <section id="project" className="bg-[#15181D] py-20">
+    <section id="project" className="bg-[#15181D] py-10">
       {/* HEADER */}
       <div className="max-w-7xl mx-auto px-6 text-center mb-14">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-4">

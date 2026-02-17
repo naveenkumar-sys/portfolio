@@ -7,7 +7,7 @@ const Skills = () => {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <section id="skills" className="relative py-32 bg-[#15181D]  text-white overflow-hidden">
+    <section id="skills" className="relative py-20 bg-[#15181D]  text-white overflow-hidden">
       {/* ANIMATED GRADIENT BACKGROUND
       <div className="absolute inset-0 opacity-20">
         <motion.div

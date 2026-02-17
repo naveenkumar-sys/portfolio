@@ -26,7 +26,7 @@ Message: ${message}`,
   };
 
   return (
-    <section id="contact" className="bg-[#15181D] text-white py-16 md:py-20">
+    <section id="contact" className="bg-[#15181D] text-white py-10 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* HEADER */}
         <div className="text-center mb-12 md:mb-14">
