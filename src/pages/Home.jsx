@@ -3,12 +3,13 @@ import Navbar from "../components/layout/Navbar";
 import Hero from "../components/sections/Hero";
 import Intro from "../components/sections/Intro";
 import Projects from "../components/sections/Projects";
-import Skills from "../components/sections/skills";
+import Skills from "../components/sections/Skills";
 import About from "../components/sections/About";
 import Contact from "../components/sections/Contact";
 import Footer from "../components/layout/Footer";
 import Experience from "../components/sections/Experience";
 import Certification from "../components/sections/Certification";
+
 
 const Home = () => {
   return (
