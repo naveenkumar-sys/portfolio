@@ -74,7 +74,7 @@ const Navbar = () => {
           className="flex items-center gap-2 cursor-pointer text-white font-semibold"
         >
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          Naveen
+          Naveenkumar R
         </div>
 
         {/* DESKTOP NAV */}

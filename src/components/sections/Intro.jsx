@@ -70,7 +70,7 @@ const Intro = () => {
               }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="hidden md:flex pointer-events-none absolute w-24 h-10 rounded-xl border border-white/20 shadow-2xl bg-white backdrop-blur-sm items-center justify-center text-sm font-semibold text-black"
+              className="hidden md:flex pointer-events-none absolute w-24 h-10 rounded-xl shadow-2xl bg-green-500/20 border border-green-400/40 backdrop-filter backdrop-blur-sm items-center justify-center text-sm font-semibold text-white"
             >
               • View
             </motion.div>

@@ -31,13 +31,13 @@ const CertificationSection = () => {
             >
               <div className="flex h-full">
                 {/* IMAGE */}
-                <div className="w-[260px] hidden lg:block">
-                  {/* <img
+                <a href={cert.link} className="w-[260px] hidden lg:block">
+                  <img
                     src={cert.image}
                     alt={cert.title}
                     className="w-full h-full object-cover"
-                  /> */}
-                </div>
+                  />
+                </a>
 
                 {/* CONTENT */}
                 <div className="p-6 flex flex-col justify-center">

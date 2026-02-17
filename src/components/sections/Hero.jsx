@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { Github, Linkedin } from "lucide-react";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -28,11 +29,9 @@ const Hero = () => {
   useEffect(() => {
     if (!isInView) return;
 
-    /* reset animations */
     setTypedText("");
     setDisplayName(finalName);
 
-    /* typing animation */
     let typeIndex = 0;
     const typingInterval = setInterval(() => {
       setTypedText(fullText.slice(0, typeIndex));
@@ -40,7 +39,6 @@ const Hero = () => {
       if (typeIndex > fullText.length) clearInterval(typingInterval);
     }, 40);
 
-    /* name scramble */
     let iteration = 0;
     const scrambleInterval = setInterval(() => {
       setDisplayName(
@@ -70,6 +68,7 @@ const Hero = () => {
   return (
     <section ref={ref} id="home" className="relative h-[160vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
+        {/* VIDEO */}
         <video
           autoPlay
           muted
@@ -82,6 +81,7 @@ const Hero = () => {
 
         <div className="absolute inset-0 bg-black/55" />
 
+        {/* CONTENT */}
         <motion.div
           ref={triggerRef}
           style={{ scale, opacity, y }}
@@ -99,6 +99,33 @@ const Hero = () => {
             MERN Stack Developer crafting scalable applications with clean UI
             and smooth user interactions.
           </p>
+
+          {/* SOCIAL + RESUME */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <a
+              href="https://github.com/naveenkumar-sys"
+              target="_blank"
+              className="group bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10 hover:bg-green-500 transition"
+            >
+              <Github className="group-hover:scale-110 transition" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/naveenkumar2003/"
+              target="_blank"
+              className="group bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10 hover:bg-green-500 transition"
+            >
+              <Linkedin className="group-hover:scale-110 transition" />
+            </a>
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              className="bg-green-500 text-black px-5 py-3 rounded-xl font-medium hover:scale-105 transition"
+            >
+              View Resume
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
