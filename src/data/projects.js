@@ -30,25 +30,18 @@ const projects = [
     link: "https://github.com/naveenkumar-sys",
     points: ["Cart system", "Product UI", "Fullstack app"],
   },
-  {
-    title: "Zion Groups Website",
-    description:
-      "Corporate website built with modern UI, responsive layout, and optimized performance for production hosting.",
-    image: zion,
-    tech: ["React", "Tailwind", "Framer Motion"],
-    role: "Frontend Development",
-    github: "https://github.com/...",
-    live: "https://ziongroups.com",
-  },
+
    {
+    title: "Zion Groups Website",
+    image: zion,
+    link: "https://ziongroups.com",
+    points: ["React", "Tailwind", "Framer Motion"],
+  },
+  {
     title: "physiotherapy website",
-    description:
-      "website built with modern UI, responsive layout, and optimized performance for production hosting.",
-    image: sd,
-    tech: ["React", "Tailwind", "Framer Motion"],
-    role: "Frontend Development",
-    github: "https://github.com/...",
-    live: "https://physiocare-p5wf.vercel.app/",
+    image: zion,
+    link: "https://physiocare-p5wf.vercel.app/",
+    points: ["React", "Tailwind", "Framer Motion"],
   },
 ];
 
