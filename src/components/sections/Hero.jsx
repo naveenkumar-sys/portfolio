@@ -68,7 +68,7 @@ const Hero = () => {
   }, [isInView]);
 
   return (
-    <section ref={ref} className="relative h-[160vh]">
+    <section ref={ref} id="home" className="relative h-[160vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
         <video
           autoPlay

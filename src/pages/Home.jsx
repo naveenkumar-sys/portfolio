@@ -8,19 +8,21 @@ import About from "../components/sections/About";
 import Contact from "../components/sections/Contact";
 import Footer from "../components/layout/Footer";
 import Experience from "../components/sections/Experience";
+import Certification from "../components/sections/Certification";
 
 const Home = () => {
   return (
-    <div className="bg-black text-white">
+    <div className=" bg-black text-white">
       <Navbar />
       <article>
         <Hero />
         <Intro />
       </article>
-      <About />
+      <About  />
       <Projects />
       <Skills />
       <Experience />
+      <Certification />
       <Contact />
 
       <Footer />

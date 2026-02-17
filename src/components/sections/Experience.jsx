@@ -3,7 +3,7 @@ import experience from "../../data/experience";
 
 const Experience = () => {
   return (
-    <section className="bg-[#15181D] text-white py-28">
+    <section id="experience" className="bg-[#15181D] text-white py-28">
       <div className="max-w-6xl mx-auto px-6">
         {/* HEADER */}
         <div className="text-center mb-20">

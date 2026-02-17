@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import pic1 from "/images/about/1.jpg";
 import pic2 from "/images/about/2.jpg";
 import pic3 from "/images/about/3.JPG";
@@ -7,14 +6,18 @@ const images = [pic3, pic2, pic1];
 
 const About = () => {
   return (
-    <section className="bg-[#15181D] text-white py-16 md:py-20 lg:py-32">
+    <section
+      id="about"
+      className="bg-[#15181D] text-white py-16 md:py-20 lg:py-32 min-h-[140vh]"
+    >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-28 px-6 md:px-10">
 
-        {/* ---------- MOBILE IMAGE (single image) ---------- */}
+        {/* ---------- MOBILE IMAGE ---------- */}
         <div className="lg:hidden flex justify-center">
           <img
             src={pic3}
             alt="profile"
+            loading="lazy"
             className="w-[280px] h-[320px] object-cover rounded-2xl shadow-2xl"
           />
         </div>
@@ -24,11 +27,12 @@ const About = () => {
           {images.map((src, i) => (
             <figure
               key={i}
-              className="sticky top-10 h-screen flex justify-center items-center"
+              className="sticky top-28 h-[560px] flex justify-center items-center"
             >
               <img
                 src={src}
                 alt=""
+                loading="lazy"
                 className="w-[420px] h-[520px] object-cover rounded-[32px] shadow-2xl"
               />
             </figure>
