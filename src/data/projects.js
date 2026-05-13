@@ -1,9 +1,9 @@
 import maaza from "/images/project/3d.webp";
-import ecom from "/images/project/eccomerce.jpg";
-import movie from "/images/project/movieReview.png";
-import recipe from "/images/project/RecipeHub.webp";
-import zion from "/images/project/zion.png";
-import sd from "/images/project/physiocare.png"
+import ecom from "/images/project/eccomerce.webp";
+import movie from "/images/project/movieReview.webp";
+import recipe from "/images/project/RecipeHub_compressed.webp";
+import zion from "/images/project/zion.webp";
+import sd from "/images/project/physiocare.webp"
 
 const projects = [
   {

@@ -1,9 +1,50 @@
 @import "tailwindcss";
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 body {
   font-family: "Source Sans 3", sans-serif;
+  background-color: black;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .font-heading {
   font-family: "Cherry Cream Soda", cursive;
+}
+
+/* GPU-accelerate videos */
+video {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize image rendering */
+img {
+  content-visibility: auto;
+}
+
+/* Offscreen section optimization */
+section {
+  contain: layout style;
 }
 

@@ -1,10 +1,17 @@
+import { motion } from "framer-motion";
 import projects from "../../data/projects";
 
 const FeaturedWork = () => {
   return (
     <section id="project" className="bg-[#15181D] py-10">
       {/* HEADER */}
-      <div className="max-w-7xl mx-auto px-6 text-center mb-14">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="max-w-7xl mx-auto px-6 text-center mb-14"
+      >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-4">
           Projects
         </h2>
@@ -12,13 +19,17 @@ const FeaturedWork = () => {
           Selected work showcasing design, development, and real-world
           problem-solving through modern web applications.
         </p>
-      </div>
+      </motion.div>
 
       {/* PROJECT GRID */}
       <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, i) => (
-          <div
+          <motion.div
             key={i}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
             className="group relative rounded-2xl overflow-hidden bg-neutral-900 shadow-lg"
           >
             {/* IMAGE */}
@@ -57,12 +68,12 @@ const FeaturedWork = () => {
               <a
                 href={project.link}
                 target="_blank"
-                className="block text-center bg-green-500 text-black text-sm py-2 rounded-lg font-medium"
+                className="block text-center bg-green-500 text-black text-sm py-2 rounded-lg font-medium hover:bg-green-400 transition-colors"
               >
                 View Project
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

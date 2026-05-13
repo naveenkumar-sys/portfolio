@@ -2,9 +2,9 @@ import { Code, Monitor, Briefcase } from "lucide-react";
 
 const experience = [
   {
-    role: "MERN Stack Developer",
+    role: "junior web developer(MERN Stack)",
     company: "LAX360 Pvt Ltd, Salem",
-    period: "2025 — Present",
+    period: "2025 - 2026",
     icon: Briefcase,
     points: [
       "Developing responsive company websites and internal tools",

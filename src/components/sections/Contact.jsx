@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -29,19 +30,31 @@ Message: ${message}`,
     <section id="contact" className="bg-[#15181D] text-white py-10 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* HEADER */}
-        <div className="text-center mb-12 md:mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-14"
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading mb-4">
             Contact
           </h2>
           <p className="text-neutral-400 text-sm sm:text-base">
-            Let’s build something together. Reach out anytime.
+            Let's build something together. Reach out anytime.
           </p>
-        </div>
+        </motion.div>
 
         {/* CONTACT GRID */}
         <div className="grid gap-8 lg:grid-cols-2">
           {/* CONTACT INFO PANEL */}
-          <div className="bg-[#1B1F26] p-6 sm:p-8 rounded-2xl space-y-6 shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-[#1B1F26] p-6 sm:p-8 rounded-2xl space-y-6 shadow-lg"
+          >
             <div>
               <h3 className="text-xl sm:text-2xl font-semibold mb-2">
                 Naveenkumar R
@@ -114,10 +127,16 @@ Message: ${message}`,
                 <Instagram size={18} />
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* CONTACT FORM */}
-          <div className="bg-[#1B1F26] p-6 sm:p-8 rounded-2xl shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-[#1B1F26] p-6 sm:p-8 rounded-2xl shadow-lg"
+          >
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               <input
                 type="text"
@@ -125,7 +144,7 @@ Message: ${message}`,
                 value={name}
                 required
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-[#15181D] border border-white/10 p-3 rounded-lg outline-none focus:border-green-500"
+                className="w-full bg-[#15181D] border border-white/10 p-3 rounded-lg outline-none focus:border-green-500 transition-colors"
               />
 
               <input
@@ -134,7 +153,7 @@ Message: ${message}`,
                 value={email}
                 required
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-[#15181D] border border-white/10 p-3 rounded-lg outline-none focus:border-green-500"
+                className="w-full bg-[#15181D] border border-white/10 p-3 rounded-lg outline-none focus:border-green-500 transition-colors"
               />
 
               <textarea
@@ -143,17 +162,17 @@ Message: ${message}`,
                 value={message}
                 required
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full bg-[#15181D] border border-white/10 p-3 rounded-lg outline-none focus:border-green-500"
+                className="w-full bg-[#15181D] border border-white/10 p-3 rounded-lg outline-none focus:border-green-500 transition-colors"
               />
 
               <button
                 type="submit"
-                className="w-full bg-green-500 text-black py-3 rounded-lg font-semibold"
+                className="w-full bg-green-500 text-black py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors"
               >
                 Send via WhatsApp
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

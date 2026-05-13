@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useLenis } from "lenis/react";
 
 const links = [
   { name: "Home", id: "home" },
@@ -17,36 +18,37 @@ const Navbar = () => {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
 
-  /* SCROLL SPY */
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
+  const lenis = useLenis(({ scroll }) => {
+    setScrolled(scroll > 60);
 
-      links.forEach((link) => {
-        const section = document.getElementById(link.id);
-        if (!section) return;
+    links.forEach((link) => {
+      const section = document.getElementById(link.id);
+      if (!section) return;
 
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 160 && rect.bottom >= 160) {
-          setActive(link.id);
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 160 && rect.bottom >= 160) {
+        setActive(link.id);
+      }
+    });
+  });
 
   /* NAVIGATION */
   const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    const offset = -90;
-    const y = el.getBoundingClientRect().top + window.pageYOffset + offset;
-
-    window.scrollTo({ top: y, behavior: "auto" });
-    setOpen(false);
+    if (lenis) {
+      lenis.scrollTo(`#${id}`, {
+        offset: -90,
+        duration: 1.5,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // expo out
+      });
+      setOpen(false);
+    } else {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const offset = -90;
+      const y = el.getBoundingClientRect().top + window.pageYOffset + offset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+      setOpen(false);
+    }
   };
 
   return (

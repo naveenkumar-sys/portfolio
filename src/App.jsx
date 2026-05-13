@@ -1,24 +1,22 @@
-import Lenis from "lenis";
-import { useEffect } from "react";
+import { ReactLenis } from "lenis/react";
 import Home from "./pages/Home";
+import ScrollProgress from "./components/animations/ScrollProgress";
+import BackToTop from "./components/animations/BackToTop";
+import "lenis/dist/lenis.css";
 
 const App = () => {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
+  return (
+    <ReactLenis root options={{ 
+      duration: 1.2, 
       smoothWheel: true,
-      smoothTouch: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
-
-  return <Home />;
+      wheelMultiplier: 1,
+      lerp: 0.1 
+    }}>
+      <ScrollProgress />
+      <BackToTop />
+      <Home />
+    </ReactLenis>
+  );
 };
 
 export default App;

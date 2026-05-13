@@ -6,7 +6,7 @@ const Hero = () => {
   const ref = useRef(null);
   const triggerRef = useRef(null);
 
-  const isInView = useInView(triggerRef);
+  const isInView = useInView(triggerRef, { once: true });
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -74,7 +74,9 @@ const Hero = () => {
           muted
           loop
           playsInline
+          preload="metadata"
           className="absolute w-full h-full object-cover"
+          style={{ willChange: "auto" }}
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
@@ -84,7 +86,13 @@ const Hero = () => {
         {/* CONTENT */}
         <motion.div
           ref={triggerRef}
-          style={{ scale, opacity, y }}
+          style={{ 
+            scale, 
+            opacity, 
+            y,
+            willChange: "transform, opacity",
+            transform: "translateZ(0)",
+          }}
           className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center px-6"
         >
           <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-semibold leading-[110%] tracking-tight">
